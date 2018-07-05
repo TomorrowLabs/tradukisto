@@ -5,6 +5,7 @@ import spock.lang.Specification
 
 import static pl.allegro.finance.tradukisto.ValueConverters.CZECH_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.ENGLISH_INTEGER
+import static pl.allegro.finance.tradukisto.ValueConverters.FINNISH_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.GERMAN_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.BRAZILIAN_PORTUGUESE_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.KAZAKH_INTEGER
@@ -52,6 +53,11 @@ class ValueConvertersTest extends Specification {
     def "should convert numbers in Kazakh"() {
         expect:
         KAZAKH_INTEGER.asWords(1_234) == "бір мың екі жүз отыз төрт"
+    }
+
+    def "should convert numbers in Finnish"() {
+        expect:
+        FINNISH_INTEGER.asWords(1_234) == "yksi tuhat kaksi sataa kolmekymmentä neljä"
     }
 
     def "should throw exception when null given"() {

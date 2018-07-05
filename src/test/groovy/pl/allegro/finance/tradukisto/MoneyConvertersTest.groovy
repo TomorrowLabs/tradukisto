@@ -5,6 +5,7 @@ import spock.lang.Specification
 
 import static pl.allegro.finance.tradukisto.MoneyConverters.CZECH_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.ENGLISH_BANKING_MONEY_VALUE
+import static pl.allegro.finance.tradukisto.MoneyConverters.FINNISH_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.GERMAN_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.KAZAKH_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.LATVIAN_BANKING_MONEY_VALUE
@@ -64,6 +65,11 @@ class MoneyConvertersTest extends Specification {
     def "should convert money in Ukrainian"() {
         expect:
         UKRAINIAN_BANKING_MONEY_VALUE.asWords(1_234.56) == "одна тисяча двісті тридцять чотири ₴ 56/100"
+    }
+
+    def "should convert money in Finnish"() {
+        expect:
+        FINNISH_BANKING_MONEY_VALUE.asWords(1_234.56) == "yksi tuhat kaksi sataa kolmekymmentä neljä € 56/100"
     }
 
     def "should throw exception when null given"() {
